@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pasión por el Baloncesto — Contacto</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo.svg" alt="Logo">
+      <h1>Pasión por el Baloncesto</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="jugadores.html">Jugadores</a></li>
+        <li><a href="entrenamiento.html">Entrenamiento</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="seccion">
+      <h2>Contacto</h2>
+      <p>Si quieres colaborar o inscribirte, envíanos un mensaje.</p>
+      <form id="contactForm">
+        <label>Nombre:<input type="text" id="name" required></label>
+        <label>Email:<input type="email" id="email" required></label>
+        <label>Mensaje:<textarea id="message" rows="4" required></textarea></label>
+        <button type="submit" class="btn">Enviar</button>
+        <p id="formMsg"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Pasión por el Baloncesto</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
