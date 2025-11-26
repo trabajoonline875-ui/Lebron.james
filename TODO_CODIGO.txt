@@ -1,0 +1,436 @@
+=== index.html ===\n\n<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pasión por el Baloncesto — Inicio</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo.svg" alt="Logo Pasión por el Baloncesto">
+      <h1>Pasión por el Baloncesto</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="jugadores.html">Jugadores</a></li>
+        <li><a href="entrenamiento.html">Entrenamiento</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Bienvenidos a la comunidad del baloncesto</h2>
+      <p>Entrena, aprende y comparte la pasión por el juego. Encuentra recursos, ejercicios y contenido para mejorar.</p>
+      <div class="hero-buttons">
+        <a class="btn" href="entrenamiento.html">Rutinas</a>
+        <a class="btn btn-outline" href="galeria.html">Ver Galería</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>Últimas noticias</h3>
+        <p>Resultados recientes, partidos locales y noticias destacadas. (Sección ejemplo)</p>
+        <a class="link" href="index.html">Leer más →</a>
+      </article>
+
+      <article class="card">
+        <h3>Consejo rápido</h3>
+        <p id="consejo-rapido">Haz clic en el botón para ver un consejo de entrenamiento.</p>
+        <button id="btnConsejoRapido" class="btn small">Mostrar consejo</button>
+      </article>
+
+      <article class="card">
+        <h3>Jugador destacado</h3>
+        <img src="images/player1.svg" alt="Jugador destacado" class="thumb">
+        <p>Kobe Bryant — Ejemplo de entrega y trabajo duro.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Pasión por el Baloncesto — Creado por Luis Fernando Ramírez Reyes</p>
+    <p><a href="mailto:luis@example.com">luis@example.com</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+\n\n=== historia.html ===\n\n<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pasión por el Baloncesto — Historia</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo.svg" alt="Logo">
+      <h1>Pasión por el Baloncesto</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="historia.html" class="active">Historia</a></li>
+        <li><a href="jugadores.html">Jugadores</a></li>
+        <li><a href="entrenamiento.html">Entrenamiento</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="seccion">
+      <h2>Historia del Baloncesto</h2>
+      <p>El baloncesto fue inventado en 1891 por el profesor James Naismith en Springfield, Massachusetts, como una actividad de interior para sus alumnos. Desde entonces ha evolucionado hasta convertirse en un deporte global con ligas profesionales, torneos internacionales y una cultura propia.</p>
+      <h3>Hitos importantes</h3>
+      <ul>
+        <li>1891 — Invención por James Naismith.</li>
+        <li>1936 — El baloncesto se incluye en los Juegos Olímpicos.</li>
+        <li>1979 — Nace la NBA moderna con expansión global.</li>
+      </ul>
+      <p>El deporte destaca por su velocidad, habilidad individual y trabajo en equipo.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Pasión por el Baloncesto</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+\n\n=== jugadores.html ===\n\n<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pasión por el Baloncesto — Jugadores</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo.svg" alt="Logo">
+      <h1>Pasión por el Baloncesto</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="jugadores.html" class="active">Jugadores</a></li>
+        <li><a href="entrenamiento.html">Entrenamiento</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="seccion">
+      <h2>Jugadores Destacados</h2>
+      <div class="players-grid">
+        <article class="player-card">
+          <img src="images/player1.svg" alt="Michael Jordan">
+          <h4>Michael Jordan</h4>
+          <p>6 veces campeón NBA, ícono del baloncesto.</p>
+        </article>
+        <article class="player-card">
+          <img src="images/player2.svg" alt="LeBron James">
+          <h4>LeBron James</h4>
+          <p>Versátil y líder en canchas modernas.</p>
+        </article>
+        <article class="player-card">
+          <img src="images/player3.svg" alt="Kobe Bryant">
+          <h4>Kobe Bryant</h4>
+          <p>Ejemplo de ética de trabajo y mentalidad ganadora.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Pasión por el Baloncesto</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+\n\n=== entrenamiento.html ===\n\n<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pasión por el Baloncesto — Entrenamiento</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo.svg" alt="Logo">
+      <h1>Pasión por el Baloncesto</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="jugadores.html">Jugadores</a></li>
+        <li><a href="entrenamiento.html" class="active">Entrenamiento</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="seccion">
+      <h2>Rutinas y Ejercicios</h2>
+      <h3>Calentamiento (10 minutos)</h3>
+      <ul>
+        <li>Trote suave 3 minutos</li>
+        <li>Estiramientos dinámicos</li>
+        <li>Movilidad de hombros y tobillos</li>
+      </ul>
+
+      <h3>Habilidades (20-30 minutos)</h3>
+      <ol>
+        <li>Dribbling con ambas manos (5 minutos)</li>
+        <li>Tiros desde distintas posiciones (10 minutos)</li>
+        <li>Pases en movimiento (5 minutos)</li>
+      </ol>
+
+      <h3>Fuerza y salto</h3>
+      <p>Ejercicios pliométricos y sentadillas explosivas para mejorar salto vertical.</p>
+
+      <button id="downloadPlan" class="btn">Descargar plan de entrenamiento (PDF)</button>
+      <p id="msgDownload"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Pasión por el Baloncesto</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+\n\n=== galeria.html ===\n\n<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pasión por el Baloncesto — Galería</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo.svg" alt="Logo">
+      <h1>Pasión por el Baloncesto</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="jugadores.html">Jugadores</a></li>
+        <li><a href="entrenamiento.html">Entrenamiento</a></li>
+        <li><a href="galeria.html" class="active">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="seccion galeria-grid">
+      <h2>Galería de imágenes</h2>
+      <div class="gallery">
+        <figure><img src="images/img1.svg" alt="Imagen 1"><figcaption>Partido local</figcaption></figure>
+        <figure><img src="images/img2.svg" alt="Imagen 2"><figcaption>Entrenamiento</figcaption></figure>
+        <figure><img src="images/img3.svg" alt="Imagen 3"><figcaption>Tiro al aro</figcaption></figure>
+        <figure><img src="images/img4.svg" alt="Imagen 4"><figcaption>Celebración</figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Pasión por el Baloncesto</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+\n\n=== contacto.html ===\n\n<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pasión por el Baloncesto — Contacto</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo.svg" alt="Logo">
+      <h1>Pasión por el Baloncesto</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="jugadores.html">Jugadores</a></li>
+        <li><a href="entrenamiento.html">Entrenamiento</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="seccion">
+      <h2>Contacto</h2>
+      <p>Si quieres colaborar o inscribirte, envíanos un mensaje.</p>
+      <form id="contactForm">
+        <label>Nombre:<input type="text" id="name" required></label>
+        <label>Email:<input type="email" id="email" required></label>
+        <label>Mensaje:<textarea id="message" rows="4" required></textarea></label>
+        <button type="submit" class="btn">Enviar</button>
+        <p id="formMsg"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Pasión por el Baloncesto</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+\n\n=== estilos.css ===\n\n
+/* Estilos generales */
+:root{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --accent:#ff6b00;
+  --muted:#9aa4b2;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+body{font-family: 'Segoe UI', Roboto, Arial, sans-serif; margin:0; background:var(--bg); color:#fff; -webkit-font-smoothing:antialiased; line-height:1.5;}
+a{color:inherit}
+.container{max-width:1100px; margin:30px auto; padding:0 20px;}
+
+/* Header y navegación */
+.site-header{display:flex; align-items:center; justify-content:space-between; padding:14px 20px; background:linear-gradient(90deg, rgba(0,0,0,0.25), rgba(0,0,0,0.05)); position:sticky; top:0; z-index:1000;}
+.logo{display:flex; align-items:center; gap:12px;}
+.logo img{width:56px; height:56px;}
+.logo h1{font-size:20px; margin:0; color:var(--accent)}
+
+/* Menú dividido y organizado */
+.main-nav ul{list-style:none; margin:0; padding:0; display:flex; gap:10px;}
+.main-nav a{display:inline-block; padding:8px 12px; text-decoration:none; color:#fff; border-radius:8px;}
+.main-nav a.active, .main-nav a:hover{background:rgba(255,255,255,0.04); box-shadow:0 4px 14px rgba(0,0,0,0.4);}
+
+/* Hero */
+.hero{background:linear-gradient(180deg, rgba(255,107,0,0.06), rgba(255,107,0,0.02)); padding:28px; border-radius:12px; text-align:center;}
+.hero h2{margin:0 0 8px 0; font-size:28px; color:var(--accent);}
+.hero p{margin:0 0 14px 0; color:var(--muted);}
+
+/* Botones */
+.btn{background:var(--accent); color:#fff; padding:10px 16px; border-radius:8px; text-decoration:none; display:inline-block; border:none; cursor:pointer;}
+.btn-outline{background:transparent; border:1px solid rgba(255,255,255,0.06);}
+.small{padding:6px 10px; font-size:14px;}
+
+/* Grid cards */
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:20px;}
+.card{background:var(--card); padding:16px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.6);}
+.thumb{width:100%; max-width:220px; border-radius:8px; display:block; margin-top:10px;}
+
+/* Sections */
+.seccion{background:var(--card); padding:24px; border-radius:12px; margin-top:20px;}
+
+/* Players */
+.players-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px;}
+.player-card{background:var(--glass); padding:14px; border-radius:10px; text-align:center;}
+
+/* Galería */
+.gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px;}
+.gallery img{width:100%; border-radius:8px;}
+
+/* Formulario */
+form label{display:block; margin-bottom:10px; color:var(--muted);}
+form input, form textarea{width:100%; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:#fff;}
+
+/* Footer */
+footer{padding:18px; text-align:center; color:var(--muted); margin-top:30px;}
+
+/* Responsive */
+@media(max-width:720px){
+  .main-nav ul{flex-wrap:wrap; gap:6px;}
+  .logo img{width:48px; height:48px;}
+}
+\n\n=== script.js ===\n\n
+// Consejos y frase
+const consejos = [
+  'Practica tiros libres todos los días (50 por sesión).',
+  'Trabaja ambos dribblings: derecho e izquierdo.',
+  'Fortalece piernas con saltos pliométricos.',
+  'Mejora la visión de juego con pases en movimiento.',
+  'Céntrate en la defensa: la mejor ofensiva nace de una buena defensa.'
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Botón consejo rápido (en index)
+  const btnConsejoRapido = document.getElementById('btnConsejoRapido');
+  if(btnConsejoRapido){
+    btnConsejoRapido.addEventListener('click', ()=>{
+      const p = document.getElementById('consejo-rapido');
+      p.textContent = consejos[Math.floor(Math.random()*consejos.length)];
+    });
+  }
+
+  // Botón en pagina de entrenamiento - descargar (simulado)
+  const btnDownload = document.getElementById('downloadPlan');
+  if(btnDownload){
+    btnDownload.addEventListener('click', ()=>{
+      const msg = document.getElementById('msgDownload');
+      msg.textContent = 'Generando plan... listo para descargar (simulado). Revisa la carpeta assets para ver el PDF ejemplo.';
+      msg.style.color = '#9ee493';
+      // En un sitio real podríamos iniciar la descarga con window.location = 'assets/plan_entrenamiento.pdf'
+    });
+  }
+
+  // Formulario de contacto (simulado)
+  const form = document.getElementById('contactForm');
+  if(form){
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const msg = document.getElementById('formMsg');
+      if(name && email && message){
+        msg.textContent = 'Gracias ' + name + '. Tu mensaje ha sido enviado (simulado).';
+        msg.style.color = '#9ee493';
+        form.reset();
+      } else {
+        msg.textContent = 'Por favor completa todos los campos.';
+        msg.style.color = '#ffb3b3';
+      }
+    });
+  }
+
+  // Resaltar el link activo según URL
+  const links = document.querySelectorAll('.main-nav a');
+  links.forEach(link => {
+    if(window.location.pathname.endsWith(link.getAttribute('href')) || window.location.href.endsWith(link.getAttribute('href'))){
+      link.classList.add('active');
+    }
+  });
+});
+\n\n

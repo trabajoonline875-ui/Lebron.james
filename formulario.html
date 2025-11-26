@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Registro - Academia Deportiva Grupo 5</title>
+  <link rel="stylesheet" href="stilo.sss.css"> 
+</head>
+<body>
+
+  <!-- MENSAJE AL CARGAR LA PÁGINA -->
+  <script>
+    window.onload = function() {
+      const mensaje = document.createElement("div");
+      mensaje.innerHTML = "🏀 ¡BIENVENIDO A LA ACADEMIA DEPORTIVA GRUPO 5! ⚽";
+      mensaje.style.fontSize = "32px";
+      mensaje.style.fontWeight = "bold";
+      mensaje.style.color = "#004d99";
+      mensaje.style.textAlign = "center";
+      mensaje.style.margin = "25px 0";
+      document.body.prepend(mensaje);
+    };
+  </script>
+
+  <!-- ENCABEZADO -->
+  <header>
+    <h1>Formulario de Registro - Academia Deportiva Grupo 5</h1>
+    <hr>
+  </header>
+
+  <!-- FORMULARIO -->
+  <main>
+    <h2>Regístrate como miembro de nuestra Academia</h2>
+
+    <form>
+      <p>
+        <label>Nombre completo del participante:</label><br>
+        <input type="text" placeholder="Escribe tu nombre completo" required>
+      </p>
+
+      <p>
+        <label>Cédula:</label><br>
+        <input type="text" placeholder="Escribe tu número de cédula" required>
+      </p>
+
+      <p>
+        <label>Correo electrónico:</label><br>
+        <input type="email" placeholder="ejemplo@correo.com" required>
+      </p>
+
+      <p>
+        <label>Número de teléfono:</label><br>
+        <input type="tel" placeholder="+1 000 000 0000" required>
+      </p>
+
+      <p>
+        <label>Dirección:</label><br>
+        <input type="text" placeholder="Tu dirección o sector">
+      </p>
+
+      <p>
+        <label>Fecha de nacimiento:</label><br>
+        <input type="date" required>
+      </p>
+
+      <p>
+        <label>Disciplina deportiva de interés:</label><br>
+        <select required>
+          <option value="">Selecciona una opción</option>
+          <option>Baloncesto</option>
+          <option>Fútbol</option>
+          <option>Voleibol</option>
+          <option>Béisbol</option>
+          <option>Atletismo</option>
+          <option>Otra</option>
+        </select>
+      </p>
+
+      <p>
+        <label>Nivel de experiencia:</label><br>
+        <select required>
+          <option value="">Selecciona tu nivel</option>
+          <option>Principiante</option>
+          <option>Intermedio</option>
+          <option>Avanzado</option>
+        </select>
+      </p>
+
+      <p>
+        <label>Objetivo deportivo:</label><br>
+        <textarea rows="3" placeholder="Ejemplo: mejorar mi rendimiento físico, participar en torneos, aprender fundamentos básicos..."></textarea>
+      </p>
+
+      <p>
+        <button type="button" onclick="registrar()">Registrarse</button>
+        <button type="button" onclick="enviar()">Enviar</button>
+        <button type="reset">Limpiar</button>
+      </p>
+    </form>
+  </main>
+
+  <hr>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <p>© 2025 Academia Deportiva Grupo 5 | Todos los derechos reservados</p>
+  </footer>
+
+  <!-- SCRIPT DE MENSAJES -->
+  <script>
+    function registrar() {
+      alert("¡Tu registro en la Academia Deportiva ha sido exitoso!");
+    }
+
+    function enviar() {
+      alert("Tu información ha sido enviada correctamente. ¡Nos pondremos en contacto contigo pronto!");
+    }
+  </script>
+
+</body>
+</html>
