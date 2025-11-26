@@ -1,0 +1,63 @@
+
+/* Estilos generales  */
+:root{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --accent:#ff6b00;
+  --muted:#9aa4b2;
+  --glass: rgba(255,255,255,0.03); 
+}
+*{box-sizing:border-box}
+body{font-family: 'Segoe UI', Roboto, Arial, sans-serif; margin:0; background:var(--bg); color:#fff; -webkit-font-smoothing:antialiased; line-height:1.5;}
+a{color:inherit}
+.container{max-width:1100px; margin:30px auto; padding:0 20px;}
+
+/* Header y navegación */
+.site-header{display:flex; align-items:center; justify-content:space-between; padding:14px 20px; background:linear-gradient(90deg, rgba(0,0,0,0.25), rgba(0,0,0,0.05)); position:sticky; top:0; z-index:1000;}
+.logo{display:flex; align-items:center; gap:12px;}
+.logo img{width:56px; height:56px;}
+.logo h1{font-size:20px; margin:0; color:var(--accent)}
+
+/* Menú dividido y organizado */
+.main-nav ul{list-style:none; margin:0; padding:0; display:flex; gap:10px;}
+.main-nav a{display:inline-block; padding:8px 12px; text-decoration:none; color:#fff; border-radius:8px;}
+.main-nav a.active, .main-nav a:hover{background:rgba(255,255,255,0.04); box-shadow:0 4px 14px rgba(0,0,0,0.4);}
+
+/* Hero */
+.hero{background:linear-gradient(180deg, rgba(255,107,0,0.06), rgba(255,107,0,0.02)); padding:28px; border-radius:12px; text-align:center;}
+.hero h2{margin:0 0 8px 0; font-size:28px; color:var(--accent);}
+.hero p{margin:0 0 14px 0; color:var(--muted);}
+
+/* Botones */
+.btn{background:var(--accent); color:#fff; padding:10px 16px; border-radius:8px; text-decoration:none; display:inline-block; border:none; cursor:pointer;}
+.btn-outline{background:transparent; border:1px solid rgba(255,255,255,0.06);}
+.small{padding:6px 10px; font-size:14px;}
+
+/* Grid cards */
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:20px;}
+.card{background:var(--card); padding:16px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.6);}
+.thumb{width:100%; max-width:220px; border-radius:8px; display:block; margin-top:10px;}
+
+/* Sections */
+.seccion{background:var(--card); padding:24px; border-radius:12px; margin-top:20px;}
+
+/* Players */
+.players-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px;}
+.player-card{background:var(--glass); padding:14px; border-radius:10px; text-align:center;}
+
+/* Galería */
+.gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px;}
+.gallery img{width:100%; border-radius:8px;}
+
+/* Formulario */
+form label{display:block; margin-bottom:10px; color:var(--muted);}
+form input, form textarea{width:100%; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:#fff;}
+
+/* Footer */
+footer{padding:18px; text-align:center; color:var(--muted); margin-top:30px;}
+
+/* Responsive */
+@media(max-width:720px){
+  .main-nav ul{flex-wrap:wrap; gap:6px;}
+  .logo img{width:48px; height:48px;}
+}
