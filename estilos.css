@@ -1,11 +1,11 @@
 
-/* Estilos generales */
+/* Estilos generales  */
 :root{
   --bg:#0f172a;
   --card:#1e293b;
   --accent:#ff6b00;
   --muted:#9aa4b2;
-  --glass: rgba(255,255,255,0.03);
+  --glass: rgba(255,255,255,0.03); 
 }
 *{box-sizing:border-box}
 body{font-family: 'Segoe UI', Roboto, Arial, sans-serif; margin:0; background:var(--bg); color:#fff; -webkit-font-smoothing:antialiased; line-height:1.5;}

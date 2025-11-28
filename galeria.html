@@ -1,328 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Galería de Helados — Productos</title>
-  <style>
-    :root{
-      --bg:#fff7ed;
-      --card:#ffffff;
-      --accent:#fbbf24;
-      --muted:#6b7280;
-      --shadow: 0 6px 18px rgba(15,23,42,0.08);
-      --radius:16px;
-      --gap:16px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    html,body{height:100%;}
-    body{
-      margin:0;
-      background: linear-gradient(180deg,#fffaf0 0%, #fff7ed 100%);
-      color:#0f172a;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:32px;
-    }
-
-    .container{max-width:1180px;margin:0 auto;}
-    header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:20px;}
-    header h1{font-size:28px;margin:0;}
-    header p{margin:6px 0 0;color:var(--muted);font-size:14px;}
-
-    /* filtros */
-    .filters{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 24px;}
-    .chip{background:var(--card);border:1px solid rgba(15,23,42,0.06);padding:8px 12px;border-radius:999px;cursor:pointer;font-size:14px;box-shadow:var(--shadow);}
-    .chip.active{background:var(--accent);color:#1f2937;border-color:rgba(0,0,0,0.06);}
-
-    /* grid */
-    .grid{display:grid;grid-template-columns:repeat(1,1fr);gap:var(--gap);}
-    @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr);}}
-    @media(min-width:1024px){.grid{grid-template-columns:repeat(3,1fr);}}
-
-    .card{
-      background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(15,23,42,0.04);
-      box-shadow:var(--shadow);display:flex;flex-direction:column;
-    }
-    .card .media{position:relative;overflow:hidden;height:220px;cursor:pointer;}
-    .card img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
-    .card .media:hover img{transform:scale(1.05);}
-    .price-badge{position:absolute;left:12px;top:12px;background:rgba(255,255,255,0.92);padding:6px 10px;border-radius:10px;font-weight:600;font-size:14px;}
-
-    .card .body{padding:14px;display:flex;flex-direction:column;gap:8px;}
-    .card h3{margin:0;font-size:16px;}
-    .muted{color:var(--muted);font-size:13px}
-    .thumbs{display:flex;gap:8px;overflow:auto;padding-top:8px}
-    .thumbs button{border:1px solid rgba(15,23,42,0.06);padding:0;border-radius:8px;width:72px;height:52px;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;background:white;cursor:pointer}
-    .thumbs img{width:100%;height:100%;object-fit:cover;display:block}
-
-    .actions{display:flex;gap:8px;margin-top:8px}
-    .btn{padding:8px 12px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);background:white;cursor:pointer}
-    .btn.primary{background:var(--accent);border-color:transparent;font-weight:700}
-
-    /* lightbox */
-    .overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:999;padding:24px}
-    .overlay.open{display:flex}
-    .modal{background:white;border-radius:14px;max-width:1100px;width:100%;max-height:90vh;overflow:hidden;display:grid;grid-template-columns:1fr 260px}
-    @media(max-width:900px){.modal{grid-template-columns:1fr;}}
-    .modal .preview{display:flex;align-items:center;justify-content:center;padding:18px;background:linear-gradient(180deg,#fff,#fff7ed);}
-    .modal img{max-width:100%;max-height:72vh;object-fit:contain}
-    .modal .side{padding:14px;display:flex;flex-direction:column;gap:12px;border-left:1px solid rgba(15,23,42,0.04)}
-    .thumb-vertical{display:flex;flex-direction:column;gap:8px;overflow:auto;padding-right:6px}
-    .thumb-vertical button{height:64px;width:100%;border-radius:8px;padding:0;overflow:hidden;border:1px solid rgba(15,23,42,0.06);background:white}
-    .thumb-vertical img{width:100%;height:100%;object-fit:cover;display:block}
-
-    .modal .meta{display:flex;flex-direction:column;gap:6px}
-    .close{position:absolute;right:10px;top:6px;background:transparent;border:0;font-size:26px;color:#0f172a;cursor:pointer}
-    .controls{display:flex;gap:8px;justify-content:center;margin-top:8px}
-    .control-btn{padding:8px 10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);background:white;cursor:pointer}
-
-    /* small niceties */
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-  </style>
+  <title>Galería - Pasión por el Baloncesto</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div>
-        <h1>Galería de Productos — Helados</h1>
-        <p>Explora productos con varias imágenes, mini-galería y vista ampliada.</p>
-      </div>
-      <div class="muted">Hecho con HTML, CSS y JavaScript</div>
-    </header>
-
-    <nav class="filters" id="filters" aria-label="Filtros de categoría">
-      <!-- botones dinámicos -->
-    </nav>
-
-    <main>
-      <section class="grid" id="grid" aria-live="polite"></section>
-    </main>
-  </div>
-
-  <!-- Lightbox / modal -->
-  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal" role="document">
-      <button class="close" id="closeBtn" aria-label="Cerrar">✕</button>
-      <div class="preview" id="preview">
-        <button class="control-btn" id="prevBtn" aria-label="Anterior" style="position:absolute;left:12px">‹</button>
-        <img id="previewImg" alt="Imagen ampliada" src="">
-        <button class="control-btn" id="nextBtn" aria-label="Siguiente" style="position:absolute;right:12px">›</button>
-      </div>
-      <aside class="side">
-        <div class="meta">
-          <strong id="metaTitle">Producto</strong>
-          <div class="muted" id="metaCat">Categoría</div>
-          <div style="font-weight:700;color:#111" id="metaPrice">RD$ 0</div>
-        </div>
-
-        <div style="flex:1;overflow:auto">
-          <div class="thumb-vertical" id="modalThumbs"></div>
-        </div>
-
-        <div class="controls">
-          <button class="btn" id="openOriginal">Abrir original</button>
-          <button class="btn primary" id="addToCart">Agregar</button>
-        </div>
-      </aside>
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo.svg" alt="Logo del sitio">
+      <h1>Pasión por el Baloncesto</h1>
     </div>
-  </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="jugadores.html">Jugadores</a></li>
+        <li><a href="entrenamiento.html">Entrenamiento</a></li>
+        <li><a href="galeria.html" class="active">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <script>
-    // Datos de ejemplo (reemplaza las URLs por las tuyas o por rutas locales)
-    const PRODUCTS = [
-      { id:1, name:"Cono Fresa", category:"Conos", price:"RD$ 95", images:[
-        "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1400&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1521305916504-4a1121188589?q=80&w=1400&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1542367597-3a6f0b2d7b89?q=80&w=1400&auto=format&fit=crop"
-      ]},
-      { id:2, name:"Tarrina Chocolate", category:"Tarrinas", price:"RD$ 120", images:[
-        "C:\Users\luis3\Desktop\paginas\imagenes\OIP.jpg",
-        "C:\Users\luis3\Desktop\paginas\imagenes\OIP.jpg"
-      ]},
-      { id:3, name:"Paleta Mango", category:"Paletas", price:"RD$ 60", images:[
-        "C:\Users\luis3\Desktop\paginas\imagenes\OIP.jpg",
-        "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1400&auto=format&fit=crop"
-      ]},
-      { id:4, name:"Copa Mixta", category:"Tarrinas", price:"RD$ 150", images:[
-        "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1400&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1541542684-59a64a4f0f3d?q=80&w=1400&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1505575974-0b2d6a7c7b1f?q=80&w=1400&auto=format&fit=crop"
-      ]}
-    ];
+  <main class="container">
+    <section class="seccion galeria-grid">
+      <h2>Galería de imágenes</h2>
+      <div class="gallery">
 
-    // Estado
-    let currentFilter = "Todos";
-    let currentProduct = null;
-    let currentIndex = 0;
+        <figure>
+          <img src="c:\Users\luis3\Downloads\partido local.webp" alt="Partido local" width="250"
+          height="250">
+          <figcaption>Partido local</figcaption>
+        </figure>
 
-    // Elementos DOM
-    const filtersEl = document.getElementById('filters');
-    const gridEl = document.getElementById('grid');
-    const overlay = document.getElementById('overlay');
-    const previewImg = document.getElementById('previewImg');
-    const metaTitle = document.getElementById('metaTitle');
-    const metaCat = document.getElementById('metaCat');
-    const metaPrice = document.getElementById('metaPrice');
-    const modalThumbs = document.getElementById('modalThumbs');
-    const openOriginal = document.getElementById('openOriginal');
-    const addToCart = document.getElementById('addToCart');
-    const closeBtn = document.getElementById('closeBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+        <figure>
+          <img src="c:\Users\luis3\Downloads\ENTRENAMIENTO.webp" alt="Entrenamiento de equipo" width="250"
+          height="250">
+          <figcaption>Entrenamiento de equipo</figcaption>
+        </figure>
 
-    // Generar categorías (incluye "Todos")
-    function renderFilters(){
-      const cats = ["Todos", ...Array.from(new Set(PRODUCTS.map(p => p.category)))];
-      filtersEl.innerHTML = "";
-      cats.forEach(c => {
-        const btn = document.createElement('button');
-        btn.className = 'chip' + (c === currentFilter ? ' active':'');
-        btn.textContent = c;
-        btn.addEventListener('click', () => { currentFilter = c; renderFilters(); renderGrid(); });
-        filtersEl.appendChild(btn);
-      });
-    }
+        <figure>
+          <img src="c:\Users\luis3\Downloads\TIRO ALARO.webp" alt="Jugador lanzando al aro"  width="250"
+          height="250">
+          <figcaption>Tiro al aro</figcaption>
+        </figure>
 
-    // Render grid de productos
-    function renderGrid(){
-      const visible = PRODUCTS.filter(p => currentFilter === "Todos" || p.category === currentFilter);
-      gridEl.innerHTML = "";
-      visible.forEach(prod => {
-        const card = document.createElement('article');
-        card.className = 'card';
-        card.innerHTML = `
-          <div class="media" tabindex="0" role="button" aria-pressed="false">
-            <img loading="lazy" src="${prod.images[0]}" alt="${escapeHtml(prod.name)}">
-            <div class="price-badge">${escapeHtml(prod.price)}</div>
-          </div>
-          <div class="body">
-            <h3>${escapeHtml(prod.name)}</h3>
-            <div class="muted">Categoría: ${escapeHtml(prod.category)}</div>
-            <div class="thumbs"></div>
-            <div class="actions">
-              <button class="btn" data-id="${prod.id}" data-action="view">Ver</button>
-              <button class="btn primary" data-id="${prod.id}" data-action="add">Agregar</button>
-            </div>
-          </div>
-        `;
-        // thumbs
-        const thumbsEl = card.querySelector('.thumbs');
-        prod.images.forEach((src, i) => {
-          const tbtn = document.createElement('button');
-          tbtn.innerHTML = `<img loading="lazy" src="${src}" alt="${escapeHtml(prod.name)} ${i+1}">`;
-          tbtn.addEventListener('click', () => openLightbox(prod, i));
-          thumbsEl.appendChild(tbtn);
-        });
+        <figure>
+          <img src="c:\Users\luis3\Downloads\victoria.webp" alt="Celebración de victoria" width="250"
+          height="250">
+          <figcaption>Celebración de victoria</figcaption>
+        </figure>
 
-        // media click
-        card.querySelector('.media').addEventListener('click', () => openLightbox(prod, 0));
-        // buttons
-        card.querySelectorAll('button[data-action]').forEach(b=>{
-          const act = b.dataset.action;
-          b.addEventListener('click', (ev)=>{
-            ev.stopPropagation();
-            if(act === 'view') openLightbox(prod,0);
-            else if(act === 'add') fakeAddToCart(prod);
-          });
-        });
+        <figure>
+          <img src="c:\Users\luis3\Downloads\balon en la cancha.webp" alt="Balón en la cancha"  width="250"
+          height="250">
+          <figcaption>Balón en la cancha</figcaption>
+        </figure>
 
-        gridEl.appendChild(card);
-      });
-    }
+        <figure>
+          <img src="c:\Users\luis3\Downloads\jugador de accion.webp" alt="Jugadores en acción" width="250"
+          height="250">
+          <figcaption>Jugadores en acción</figcaption>
+        </figure>
 
-    // Lightbox
-    function openLightbox(prod, idx=0){
-      currentProduct = prod;
-      currentIndex = idx;
-      updateModal();
-      overlay.classList.add('open');
-      overlay.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
-      // focus
-      closeBtn.focus();
-    }
-    function closeLightbox(){
-      overlay.classList.remove('open');
-      overlay.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-      currentProduct = null;
-    }
-    function updateModal(){
-      if(!currentProduct) return;
-      previewImg.src = currentProduct.images[currentIndex];
-      previewImg.alt = currentProduct.name + ' — imagen ' + (currentIndex+1);
-      metaTitle.textContent = currentProduct.name;
-      metaCat.textContent = currentProduct.category;
-      metaPrice.textContent = currentProduct.price;
-      // thumbs
-      modalThumbs.innerHTML = '';
-      currentProduct.images.forEach((s,i)=>{
-        const b = document.createElement('button');
-        b.innerHTML = `<img loading="lazy" src="${s}" alt="thumb ${i+1}">`;
-        if(i === currentIndex) b.style.outline = '3px solid rgba(251,191,36,0.9)';
-        b.addEventListener('click', ()=>{ currentIndex = i; updateModal(); });
-        modalThumbs.appendChild(b);
-      });
-      openOriginal.href = currentProduct.images[currentIndex];
-      addToCart.onclick = ()=> fakeAddToCart(currentProduct);
-    }
+      </div>
+    </section>
+  </main>
 
-    function prevImage(){
-      if(!currentProduct) return;
-      currentIndex = (currentIndex - 1 + currentProduct.images.length) % currentProduct.images.length;
-      updateModal();
-    }
-    function nextImage(){
-      if(!currentProduct) return;
-      currentIndex = (currentIndex + 1) % currentProduct.images.length;
-      updateModal();
-    }
-
-    // eventos UI
-    closeBtn.addEventListener('click', closeLightbox);
-    overlay.addEventListener('click', (e)=> { if(e.target === overlay) closeLightbox(); });
-    prevBtn.addEventListener('click', prevImage);
-    nextBtn.addEventListener('click', nextImage);
-    document.addEventListener('keydown', (e)=>{
-      if(overlay.classList.contains('open')){
-        if(e.key === 'Escape') closeLightbox();
-        if(e.key === 'ArrowLeft') prevImage();
-        if(e.key === 'ArrowRight') nextImage();
-      }
-    });
-
-    // pequeña función para simular agregar al carrito
-    function fakeAddToCart(prod){
-      alert(`Agregado: ${prod.name} — ${prod.price}`);
-    }
-
-    // util: escapar para seguridad mínima (evita inyección si generas HTML desde datos externos)
-    function escapeHtml(str){
-      return String(str).replace(/[&<>"']/g, function(m){
-        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
-      });
-    }
-
-    // init
-    renderFilters();
-    renderGrid();
-
-    // Opcional: soporte táctil para swipe en la preview (muy simple)
-    (function addTouchSwipe(){
-      let startX = 0;
-      let endX = 0;
-      const preview = document.getElementById('preview');
-      preview.addEventListener('touchstart', e => { startX = e.changedTouches[0].screenX; });
-      preview.addEventListener('touchend', e => {
-        endX = e.changedTouches[0].screenX;
-        const diff = endX - startX;
-        if(Math.abs(diff) > 40){
-          if(diff < 0) nextImage(); else prevImage();
-        }
-      });
-    })();
-
-  </script>
+  <footer>
+    <p>© 2025 Pasión por el Baloncesto</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
